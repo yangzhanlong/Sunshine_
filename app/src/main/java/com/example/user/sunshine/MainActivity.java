@@ -54,6 +54,8 @@ public class MainActivity extends AppCompatActivity {
      */
     public static class PlaceholderFragment extends Fragment {
 
+        ArrayAdapter<String> mForecastAdapter;
+
         public PlaceholderFragment() {
         }
 
@@ -75,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
             // Now that we have some dummy forecast data, create an ArrayAdapter.
             // The ArrayAdapter will take data from a source (like our dummy forecast) and
             // use it to populate the ListView it's attached to.
-            ArrayAdapter<String> adapter = new ArrayAdapter<>(
+            mForecastAdapter = new ArrayAdapter<>(
                     getActivity(), // The current context (this activity)
                     R.layout.list_item_forecast, // The name of the layout ID.
                     R.id.list_item_forecast_textview, // The ID of the textview to populate.
