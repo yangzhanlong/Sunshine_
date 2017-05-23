@@ -74,8 +74,11 @@ public class DetailActivity extends AppCompatActivity {
             Intent intent = getActivity().getIntent();
             if (intent != null && intent.hasExtra(Intent.EXTRA_TEXT)) {
                 mForecastStr = intent.getStringExtra(Intent.EXTRA_TEXT);
-                TextView textView = (TextView) rootView.findViewById(R.id.tv_forecast);
-                textView.setText(mForecastStr);
+
+                if (null != mForecastStr) {
+                    TextView textView = (TextView) rootView.findViewById(R.id.tv_forecast);
+                    textView.setText(mForecastStr);
+                }
             }
             return rootView;
         }
